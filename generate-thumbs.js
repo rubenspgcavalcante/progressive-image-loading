@@ -7,12 +7,6 @@ const {
 const sharp = require("sharp");
 const glob = require("glob");
 const potrace = require("potrace");
-const {
-  generateSVG
-} = require("node-primitive");
-const {
-  Triangle
-} = require("node-primitive/src/shape");
 
 const imgsDir = path.join("./src/assets/", "**/*.+(jpg|png)");
 const writeFile = promisify(fs.writeFile);
@@ -30,7 +24,7 @@ const replaceExt = (filePath, ext) => filePath.replace(/\.(png|jpg)/g, ext);
 globP(imgsDir)
   .then(files =>
     Promise.all(files
-      .filter(file => !/\.(thumb|primitive)\./.test(file))
+      .filter(file => !/\.(thumb|primitive|trace)\./.test(file))
       .map(proccessFile)
     )
   )
@@ -72,6 +66,6 @@ function generatePrimitive(file) {
   const out = replaceExt(file, '.primitive.svg');
 
   return sharp(file).resize(512, 512).max().toFile(tempPath)
-    .then(() => exec(`primitive -i ${tempPath} -o ${out} -m 3 -n 500`))
+    .then(() => exec(`primitive -i ${tempPath} -o ${out} -n 500`))
     .then(() => console.log(`Outputed file ${out}`));
 }
