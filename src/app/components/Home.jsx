@@ -5,24 +5,25 @@ import Card from "./Card";
 import araraPic from "assets/arara.jpg";
 import araraThumb from "assets/arara.thumb.jpg";
 import araraTrace from "assets/arara.trace.svg";
-import araraPrimitive from "assets/arara.primitive.png";
+import araraPrimitive from "assets/arara.primitive.svg";
 
 export default () =>
   <section className="section">
-    <div className="big-block container">
-      <h1 className="title">Scroll down</h1>
+    <div className="container">
+      <h1 className="title">Progressive Loading examples</h1>
     </div>
 
     <div className="container">
-      <Card thumb={araraThumb} text={"Low size and blur ~900 bytes (inlined)"}>
+      <h2 className="title">Fatest option</h2>
+      <Card title="Thumb + Blur" thumb={araraThumb} text={"Thumb of 64px and blur, ~900 bytes (inlined)"}>
         <ProgressiveLoading src={araraPic} thumb={araraThumb} blur={true} />
       </Card>
-
-      <Card thumb={araraPrimitive} text={"Trace 25kb ~3% of original size"}>
+      <h2 className="title">Middle term</h2>
+      <Card title="Image Trace" thumb={araraPrimitive} text={"Trace on a 256px version, 25kb ~3% of original size"}>
         <ProgressiveLoading src={araraPic} thumb={araraTrace} />
       </Card>
-
-      <Card thumb={araraPrimitive} text={"Primitive 80kb ~10% of original size"}>
+      <h2 className="title">Visually best option</h2>
+      <Card title="Image Primitives" thumb={araraPrimitive} text={"500 elipses on a 512px version, 41kb ~5% of original size"}>
         <ProgressiveLoading src={araraPic} thumb={araraPrimitive} />
       </Card>
     </div>

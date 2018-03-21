@@ -1,6 +1,6 @@
 import React from "react";
 
-export default ({ children, thumb, text, technique }) =>
+export default ({ children, thumb, title, text, technique }) =>
   <div className="card">
     <div className="card-image">
       {children}
@@ -13,7 +13,7 @@ export default ({ children, thumb, text, technique }) =>
           </figure>
         </div>
         <div className="media-content">
-          <p className="title is-4">Thumbnail</p>
+          <p className="title is-4">{title}</p>
         </div>
       </div>
 

@@ -22,7 +22,6 @@
     "glob": "^7.1.2",
     "html-webpack-plugin": "^3.0.7",
     "image-webpack-loader": "^4.2.0",
-    "node-primitive": "^0.0.2",
     "node-sass": "^4.7.2",
     "potrace": "^2.1.1",
     "sass-loader": "^6.0.7",

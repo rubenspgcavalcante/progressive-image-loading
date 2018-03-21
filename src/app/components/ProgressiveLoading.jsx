@@ -3,7 +3,7 @@ import withIntersectionObserver from "../hocs/withIntersectionObserver"
 import classNames from "classnames";
 import { string, bool } from "prop-types";
 
-class Picture extends PureComponent {
+class ProgresiveLoading extends PureComponent {
   static propTypes = {
     src: string.isRequired,
     thumb: string.isRequired,
@@ -46,4 +46,4 @@ class Picture extends PureComponent {
   }
 }
 
-export default withIntersectionObserver(Picture);
+export default withIntersectionObserver(ProgresiveLoading);
