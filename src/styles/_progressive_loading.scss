@@ -1,0 +1,21 @@
+.progressive-loading {
+  overflow: hidden;
+  position: relative;
+  &-wrapper {
+    img {
+      min-width: 100%;
+      transform: scale(1.1);
+      opacity: 1;
+      transition: opacity 2s ease-in-out;
+      &.original {
+        position: absolute;
+      }
+      &.thumb.blur {
+        filter: blur(8px);
+      }
+      &.hide {
+        opacity: 0;
+      }
+    }
+  }
+}

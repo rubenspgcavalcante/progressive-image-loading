@@ -1,0 +1,44 @@
+{
+  "name": "progressive-loading",
+  "version": "1.0.0",
+  "description": "A example of progressive image loading",
+  "main": "src/main.js",
+  "author": "Rubens Pinheiro",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "NODE_ENV=development webpack-dev-server --content-base dist/",
+    "build": "NODE_ENV=production webpack"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "glob": "^7.1.2",
+    "html-webpack-plugin": "^3.0.7",
+    "image-webpack-loader": "^4.2.0",
+    "node-primitive": "^0.0.2",
+    "node-sass": "^4.7.2",
+    "potrace": "^2.1.1",
+    "sass-loader": "^6.0.7",
+    "sharp": "^0.20.1",
+    "style-loader": "^0.20.3",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12",
+    "webpack-dev-server": "^3.1.1"
+  },
+  "dependencies": {
+    "bulma": "^0.6.2",
+    "classnames": "^2.2.5",
+    "prop-types": "^15.6.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "rxjs": "^5.5.7"
+  }
+}
