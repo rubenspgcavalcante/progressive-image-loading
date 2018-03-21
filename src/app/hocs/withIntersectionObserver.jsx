@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
 import { registerScrollArea } from "../utils/intersection";
-import "rxjs/add/operator/do";
 
 export default function withIntersectionObserver(Component) {
   return class extends PureComponent {
@@ -17,7 +16,6 @@ export default function withIntersectionObserver(Component) {
       this._mounted = true;
       this._intersection$ = this._subscriber(this._wrapper);
       this._intersection$
-        .do(({ entry }) => entry[0].isIntersecting && console.log(this._wrapper))
         .subscribe(({ entry }) =>
           this._mounted && this.setState({ intersecting: entry[0].isIntersecting })
         );

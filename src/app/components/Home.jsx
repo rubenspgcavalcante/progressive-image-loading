@@ -19,7 +19,7 @@ export default () =>
         <ProgressiveLoading src={araraPic} thumb={araraThumb} blur={true} />
       </Card>
       <h2 className="title">Middle term</h2>
-      <Card title="Image Trace" thumb={araraPrimitive} text={"Trace on a 256px version, 25kb ~3% of original size"}>
+      <Card title="Image Trace" thumb={araraTrace} text={"Trace on a 256px version, 25kb ~3% of original size"}>
         <ProgressiveLoading src={araraPic} thumb={araraTrace} />
       </Card>
       <h2 className="title">Visually best option</h2>
