@@ -3,12 +3,12 @@ import withIntersectionObserver from "../hocs/withIntersectionObserver"
 import classNames from "classnames";
 import { bool, string } from "prop-types";
 
-class ProgresiveLoading extends PureComponent {
+class ProgresiveImageLoading extends PureComponent {
   static propTypes = {
     src: string.isRequired,
     thumb: string.isRequired,
     blur: bool
-  }
+  };
 
   state = { ready: false };
   _triggered = false;
@@ -32,7 +32,7 @@ class ProgresiveLoading extends PureComponent {
   }
 
   render() {
-    const { intersecting, src, thumb, blur } = this.props;
+    const { src, thumb, blur } = this.props;
     const { ready } = this.state;
 
     return (
@@ -46,4 +46,4 @@ class ProgresiveLoading extends PureComponent {
   }
 }
 
-export default withIntersectionObserver(ProgresiveLoading);
+export default withIntersectionObserver(ProgresiveImageLoading);

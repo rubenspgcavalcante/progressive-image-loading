@@ -5,7 +5,7 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: process.env.NODE_ENV,
   entry: {
-    app: './main.jsx'
+    app: ['intersection-observer', './main.jsx']
   },
   output: {
     filename: '[name].[hash].js',

@@ -38,6 +38,7 @@
   "dependencies": {
     "bulma": "^0.6.2",
     "classnames": "^2.2.5",
+    "intersection-observer": "^0.5.0",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
