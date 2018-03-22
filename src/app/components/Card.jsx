@@ -9,7 +9,7 @@ export default ({ children, thumb, title, text, technique }) =>
       <div className="media">
         <div className="media-left">
           <figure className="image is-48x48">
-            <img src={thumb} alt="Placeholder image" />
+            <img src={thumb} alt="Placeholder image"/>
           </figure>
         </div>
         <div className="media-content">

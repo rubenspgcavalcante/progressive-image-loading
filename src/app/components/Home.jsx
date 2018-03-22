@@ -15,16 +15,18 @@ export default () =>
 
     <div className="container">
       <h2 className="title">Fatest option</h2>
-      <Card title="Thumb + Blur" thumb={thumb} text={"Thumb of 64px and blur, 2 kbytes (inlined) ~0.3% of original size"}>
-        <ProgressiveLoading src={original} thumb={thumb} blur={true} />
+      <Card title="Thumb + Blur" thumb={thumb}
+            text={"Thumb of 64px and blur, 2 kbytes (inlined) ~0.3% of original size"}>
+        <ProgressiveLoading src={original} thumb={thumb} blur={true}/>
       </Card>
       <h2 className="title">Middle term</h2>
       <Card title="Image Trace" thumb={trace} text={"Trace on a 256px version, 62kb ~8.5% of original size"}>
-        <ProgressiveLoading src={original} thumb={trace} />
+        <ProgressiveLoading src={original} thumb={trace}/>
       </Card>
       <h2 className="title">Visually the best option</h2>
-      <Card title="Image Primitives" thumb={primitive} text={"500 elipses on a 512px version, 42kb ~6% of original size"}>
-        <ProgressiveLoading src={original} thumb={primitive} />
+      <Card title="Image Primitives" thumb={primitive}
+            text={"500 elipses on a 512px version, 42kb ~6% of original size"}>
+        <ProgressiveLoading src={original} thumb={primitive}/>
       </Card>
     </div>
   </section>

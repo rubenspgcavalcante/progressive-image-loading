@@ -2,22 +2,21 @@ import React, { PureComponent } from "react";
 import { registerScrollArea } from "../utils/intersection";
 
 export default function withIntersectionObserver(Component) {
+  const subscriber = registerScrollArea();
+
   return class extends PureComponent {
     constructor(props) {
       super(props);
       this.state = { intersecting: null };
-      this._subscriber = registerScrollArea();
       this._mounted = false;
-      this._intersection$ = null;
       this._wrapper = null;
     }
 
     componentDidMount() {
       this._mounted = true;
-      this._intersection$ = this._subscriber(this._wrapper);
-      this._intersection$
-        .subscribe(({ entry }) =>
-          this._mounted && this.setState({ intersecting: entry[0].isIntersecting })
+      subscriber(this._wrapper)
+        .subscribe(intersecting =>
+          this._mounted && this.setState({ intersecting })
         );
     }
 

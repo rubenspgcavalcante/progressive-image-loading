@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import withIntersectionObserver from "../hocs/withIntersectionObserver"
 import classNames from "classnames";
-import { string, bool } from "prop-types";
+import { bool, string } from "prop-types";
 
 class ProgresiveLoading extends PureComponent {
   static propTypes = {
@@ -38,8 +38,8 @@ class ProgresiveLoading extends PureComponent {
     return (
       <div className="progressive-loading">
         <div className="progressive-loading-wrapper">
-          {ready ? <img className="original" src={src} /> : null}
-          <img src={thumb} className={classNames("thumb", { blur, hide: ready })} />
+          {ready ? <img className="original" src={src}/> : null}
+          <img src={thumb} className={classNames("thumb", { blur, hide: ready })}/>
         </div>
       </div>
     )

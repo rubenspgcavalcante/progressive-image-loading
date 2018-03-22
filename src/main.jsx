@@ -5,6 +5,6 @@ import "./styles/index.scss";
 import Home from "./app/components/Home";
 
 reactDom.render(
-  <Home />,
+  <Home/>,
   document.getElementById("app")
 );
