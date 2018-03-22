@@ -1,9 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const child_process = require("child_process");
-const {
-  promisify
-} = require("util");
+const { promisify } = require("util");
 const sharp = require("sharp");
 const glob = require("glob");
 const potrace = require("potrace");
@@ -29,7 +27,7 @@ globP(imgsDir)
     )
   )
   .then(() => console.info("Finished"))
-  .catch(err => console.error(err))
+  .catch(err => console.error(err));
 
 function proccessFile(file) {
   console.log(`Processing file ${file}`);
@@ -51,10 +49,10 @@ function generateTrace(file) {
   const tempPath = `/tmp/${tmpFile}`;
   const out = replaceExt(file, '.trace.svg');
 
-  return sharp(file).resize(256, 256).max().toFile(tempPath)
+  return sharp(file).resize(128, 128).max().toFile(tempPath)
     .then(() => trace(tempPath, {
       background: "#F6F8FA",
-      color: "#e2f0ff"
+      color: "#787878"
     }))
     .then(svg => writeFile(out, svg))
     .then(() => console.info(`Outputed file ${out}`));

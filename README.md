@@ -3,6 +3,7 @@
 ## What this repo is for?
 
 A small example of the how to apply progressive image loading and some strategies currently used on web apps for that.
+Check it here: [progressive-image-loading.surge.sh](https://progressive-image-loading.surge.sh)
 
 ### Setup
 

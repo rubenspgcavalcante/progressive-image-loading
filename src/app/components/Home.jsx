@@ -20,7 +20,7 @@ export default () =>
         <ProgressiveImageLoading src={original} thumb={thumb} blur={true}/>
       </Card>
       <h2 className="title">Middle term</h2>
-      <Card title="Image Trace" thumb={trace} text={"Trace on a 256px version, 62kb ~8.5% of original size"}>
+      <Card title="Image Trace" thumb={trace} text={"Trace on a 128px version, 21kb ~3% of original size"}>
         <ProgressiveImageLoading src={original} thumb={trace}/>
       </Card>
       <h2 className="title">Visually the best option</h2>
