@@ -1,20 +1,20 @@
 # Progressive Image Loading
 
-## What this repo is for?
+## What this repository is for?
 
 A small example of the how to apply progressive image loading and some strategies currently used on web apps for that.  
 Original post on Medium: [Progressive Image Loading and IntersectionObserver](https://medium.com/front-end-weekly/progressive-image-loading-and-intersectionobserver-d0359b5d90cd)  
 Check it here: [progressive-image-loading.surge.sh](https://progressive-image-loading.surge.sh)
 
+### Dependency
+
+This project depends in a GO lib, called [primitive](https://github.com/fogleman/primitive).
+Before running the `yarn pre-build` you need to install `primitive`.
+
 ### Setup
 
 First run `yarn install` to install the dependencies and then, run `yarn pre-build` to generate the image placeholders and 
 finnally `yarn start` to run the webpack-dev-server.
-
-### Dependencie
-
-This project depends in a non NodeJS lib, called [primitive](https://github.com/fogleman/primitive) written in GO.
-Before running the `node generate-thumbs.js` you need to install `primitive`.
 
 ### Credits
 

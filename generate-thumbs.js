@@ -38,8 +38,7 @@ function proccessFile(file) {
 function generateThumb(file) {
   const thumb = addThumbToName(file);
   return sharp(file)
-    .resize(64, 64)
-    .max()
+    .resize(64, 64, {fit: 'inside'})
     .toFile(thumb)
     .then(() => console.info(`Outputed file ${thumb}`))
 }
@@ -49,7 +48,7 @@ function generateTrace(file) {
   const tempPath = `/tmp/${tmpFile}`;
   const out = replaceExt(file, '.trace.svg');
 
-  return sharp(file).resize(128, 128).max().toFile(tempPath)
+  return sharp(file).resize(128, 128, {fit: 'inside'}).toFile(tempPath)
     .then(() => trace(tempPath, {
       background: "#F6F8FA",
       color: "#787878"
@@ -63,7 +62,7 @@ function generatePrimitive(file) {
   const tempPath = `/tmp/${tmpFile}`;
   const out = replaceExt(file, '.primitive.svg');
 
-  return sharp(file).resize(512, 512).max().toFile(tempPath)
+  return sharp(file).resize(512, 512, {fit: 'inside'}).toFile(tempPath)
     .then(() => exec(`primitive -i ${tempPath} -o ${out} -n 500`))
     .then(() => console.log(`Outputed file ${out}`));
 }

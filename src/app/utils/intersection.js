@@ -1,6 +1,5 @@
-import { Subject } from "rxjs/Subject";
-import "rxjs/add/operator/mergeMap";
-import { of } from "rxjs/observable/of";
+import { Subject, of } from "rxjs";
+import { mergeMap } from "rxjs/operators";
 
 export const registerScrollArea = (viewportEl = null) => {
   const subject = new Subject();
@@ -8,19 +7,18 @@ export const registerScrollArea = (viewportEl = null) => {
     (entries, observer) => subject.next({ entries, observer }),
     {
       root: viewportEl,
-      rootMargin: '0px',
+      rootMargin: "0px",
       threshold: 0.2
     }
   );
 
-  return (element) => {
+  return element => {
     subscriber.observe(element);
-
-    return subject
-      .asObservable()
-      .mergeMap(({ entries }) => {
+    return subject.asObservable().pipe(
+      mergeMap(({ entries }) => {
         const entry = entries.filter(entry => entry.target === element);
         return of(entry.length && entry[0].isIntersecting);
-      });
-  }
+      })
+    );
+  };
 };
